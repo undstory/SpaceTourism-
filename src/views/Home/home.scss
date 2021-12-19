@@ -1,0 +1,190 @@
+@import "../../globals.scss";
+
+.home {
+  background-image: url("../../assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  min-height: $desktopHeight;
+  display: flex;
+  justify-content: center;
+
+  @include tablet {
+    min-height: $tabletHeight;
+    background-size: cover;
+    background-image: url("../../assets/home/background-home-tablet.jpg");
+  }
+
+  .contentContainer {
+    width: $desktopWidth;
+    height: $desktopHeight;
+    display: flex;
+    align-content: center;
+
+    @include tablet {
+      width: $tabletWidth;
+      height: $tabletHeight;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
+
+    .left {
+      flex: 1;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+
+      @include tablet {
+        justify-content: center;
+        height: 45%;
+      }
+
+      .textContainer {
+        margin: 386px 110px 0px 165px;
+
+        h4 {
+          text-transform: uppercase;
+          font-size: $heading5Size;
+          font-family: $condensedFont;
+          letter-spacing: $heading5Spacing;
+          font-weight: 100;
+        }
+
+        h2 {
+          padding-top: 25px;
+          text-transform: uppercase;
+          font-size: $heading1Size;
+          font-family: $regularHeadingFont;
+          font-weight: $heading1Weight;
+        }
+
+        p {
+          margin-top: 25px;
+          font-size: $bodyTextSize;
+          font-family: $regularTextFont;
+          line-height: 32px;
+        }
+
+        @include tablet {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          margin: 230px 20% 0px 20%;
+
+          h4 {
+            font-size: 20px;
+            letter-spacing: 3.2px;
+          }
+
+          h2 {
+            padding-top: 20px;
+          }
+
+          p {
+            font-size: 15px;
+            margin: 1px 5%;
+            text-align: center;
+            font-weight: 100;
+          }
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      .circleContainer {
+        margin: 364px 0px 0px 116px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+          .bgCircle {
+            width: 370px;
+            height: 370px;
+            opacity: 0.5;
+          }
+
+          h3 {
+            font-size: 35px;
+          }
+
+          .circle {
+            width: 250px;
+            height: 250px;
+          }
+        }
+
+        .circle {
+          width: 274px;
+          height: 274px;
+          background-color: white;
+          border-radius: 50%;
+          position: absolute;
+          z-index: 3;
+          transition: all 0.5s ease;
+        }
+
+        .bgCircle {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background-color: #373942;
+          opacity: 0.8;
+          z-index: 2;
+          transition: all 0.5s ease;
+        }
+
+        h3 {
+          text-transform: uppercase;
+          position: absolute;
+          color: black;
+          z-index: 2;
+          font-family: $regularHeadingFont;
+          font-size: $heading4Size;
+          font-weight: 100;
+          letter-spacing: $subheading2Spacing;
+          z-index: 11;
+          transition: all 0.5s ease;
+        }
+      }
+
+      @include tablet {
+        flex: 1;
+
+        .circleContainer {
+          margin: 12% 0% 0% 0%;
+
+          .circle {
+            width: 250px;
+            height: 250px;
+          }
+          &:hover {
+            .circle {
+              width: 230px;
+              height: 230px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
