@@ -1,13 +1,13 @@
 import React from 'react'
+import "./menuItem.scss"
 
 const MenuItem = ({ num, id, text, handleScreenChange, currentPage}) => {
     return (
         <div className="menuItem" onClick={() => handleScreenChange(id)}>
             <div className="textContainer">
                 <h6>
-                    <span>
-                        {num}
-                    </span>
+                    <span>{num}</span>
+                    
                     {text}
                 </h6>
             </div>

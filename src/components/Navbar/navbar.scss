@@ -1,8 +1,8 @@
 @import "../../globals.scss";
 
 .navbar {
-  //   position: absolute;
-  //   z-index: 3;
+  position: absolute;
+  z-index: 3;
   display: flex;
   justify-content: center;
   width: 100vw;
@@ -51,6 +51,17 @@
         @include tablet {
           margin-right: 15px;
         }
+      }
+    }
+
+    @include tablet {
+      margin-top: 0px;
+      .logo {
+        margin-left: 40px;
+      }
+
+      span {
+        display: none;
       }
     }
   }

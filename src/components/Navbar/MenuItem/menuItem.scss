@@ -1,0 +1,61 @@
+@import "../../../globals.scss";
+
+.menuItem {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 55px;
+  @include tablet {
+    margin-right: 30px;
+  }
+
+  &:hover {
+    .indicator {
+      width: 100%;
+      &.active {
+        background-color: white;
+      }
+    }
+  }
+
+  .textContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h6 {
+      color: white;
+      font-weight: 600;
+      font-family: $condensedFont;
+      font-size: $navTextSize;
+      letter-spacing: $navTextSpacing;
+      text-transform: uppercase;
+
+      @include tablet {
+        font-size: 15px;
+      }
+
+      span {
+        font-weight: bold;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .indicator {
+    background-color: white;
+    transition: all 0.3s ease;
+    width: 0%;
+    height: 3px;
+
+    &.active {
+      background-color: grey;
+      width: 100%;
+    }
+  }
+}
