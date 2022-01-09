@@ -1,0 +1,123 @@
+@import "../../globals.scss";
+
+.destinations {
+  background-image: url("../../assets/destination/background-destination-desktop.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  min-height: $desktopHeight;
+  display: flex;
+  justify-content: center;
+
+  @include tablet {
+    min-height: $tabletHeight;
+    background-image: url("../../assets/destination/background-destination-tablet.jpg");
+  }
+
+  .contentContainer {
+    width: $desktopWidth;
+    height: $desktopHeight;
+    position: relative;
+    transition: opacity 0.5s ease;
+
+    @include tablet {
+      width: $tabletWidth;
+      height: $tabletHeight;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
+
+    .title {
+      position: absolute;
+      top: 212px;
+      left: 166px;
+
+      h2 {
+        font-weight: 100;
+        font-size: $heading5size;
+        letter-spacing: $heading5spacing;
+        color: white;
+        text-transform: uppercase;
+        font-family: $condensedFont;
+
+        span {
+          color: grey;
+          font-weight: 600;
+          margin-right: 26px;
+        }
+      }
+
+      @include tablet {
+        position: absolute;
+        top: 13%;
+        left: 20%;
+        h2 {
+          font-size: 23px;
+          letter-spacing: 2px;
+          span {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+
+    .planetSelector {
+      display: flex;
+      justify-content: space-between;
+      width: 283px;
+      color: white;
+      position: absolute;
+      left: 833px;
+      top: 310px;
+      z-index: 3;
+      @include tablet {
+        position: absolute;
+        top: 56%;
+        left: calc(50% - (283px / 2));
+      }
+      .textContainer {
+        text-transform: uppercase;
+        font-family: $condensedFont;
+        font-size: $navTextSize;
+        letter-spacing: $navTextSpacing;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          .indicator {
+            width: 100%;
+            &.active {
+              background-color: white;
+            }
+          }
+        }
+
+        .indicator {
+          margin-top: 11px;
+          width: 0%;
+          height: 3px;
+          background-color: white;
+          transition: all 0.3s ease;
+
+          &.active {
+            background-color: grey;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .planetSlider {
+      width: 100vw * 5;
+      height: $desktopHeight;
+      display: flex;
+    }
+  }
+}
