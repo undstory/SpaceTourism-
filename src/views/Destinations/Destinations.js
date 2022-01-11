@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./destinations.scss"
-import * as data from "../../assets/data.json"
+import data from "../../assets/data.json"
 import moon from "../../assets/destination/image-moon.png"
 import mars from "../../assets/destination/image-mars.png"
 import europa from "../../assets/destination/image-europa.png"
@@ -61,11 +61,11 @@ const handlePlanetChange = (id) => {
                             <hr />
                             <div className="statsContainer">
                                 <div className='left'>
-                                    <h3 classname="header">avg. distance</h3>
+                                    <h3 className="header">avg. distance</h3>
                                     <h2>{destinations[0].distance}</h2> 
                                 </div>
                                 <div className='right'>
-                                    <h3 classname="header">est. travel time</h3>
+                                    <h3 className="header">est. travel time</h3>
                                     <h2>{destinations[0].travel}</h2> 
                                 </div>
                             </div>
@@ -82,11 +82,11 @@ const handlePlanetChange = (id) => {
                             <hr />
                             <div className="statsContainer">
                                 <div className='left'>
-                                    <h3 classname="header">avg. distance</h3>
+                                    <h3 className="header">avg. distance</h3>
                                     <h2>{destinations[1].distance}</h2> 
                                 </div>
                                 <div className='right'>
-                                    <h3 classname="header">est. travel time</h3>
+                                    <h3 className="header">est. travel time</h3>
                                     <h2>{destinations[1].travel}</h2> 
                                 </div>
                             </div>
@@ -103,11 +103,11 @@ const handlePlanetChange = (id) => {
                             <hr />
                             <div className="statsContainer">
                                 <div className='left'>
-                                    <h3 classname="header">avg. distance</h3>
+                                    <h3 className="header">avg. distance</h3>
                                     <h2>{destinations[2].distance}</h2> 
                                 </div>
                                 <div className='right'>
-                                    <h3 classname="header">est. travel time</h3>
+                                    <h3 className="header">est. travel time</h3>
                                     <h2>{destinations[2].travel}</h2> 
                                 </div>
                             </div>
@@ -124,11 +124,11 @@ const handlePlanetChange = (id) => {
                             <hr />
                             <div className="statsContainer">
                                 <div className='left'>
-                                    <h3 classname="header">avg. distance</h3>
+                                    <h3 className="header">avg. distance</h3>
                                     <h2>{destinations[3].distance}</h2> 
                                 </div>
                                 <div className='right'>
-                                    <h3 classname="header">est. travel time</h3>
+                                    <h3 className="header">est. travel time</h3>
                                     <h2>{destinations[3].travel}</h2> 
                                 </div>
                             </div>
