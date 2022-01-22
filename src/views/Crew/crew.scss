@@ -1,0 +1,224 @@
+@import "../../globals.scss";
+
+.crew {
+  background-image: url("../../assets/crew/background-crew-desktop.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  min-height: $desktopHeight;
+  display: flex;
+  justify-content: center;
+
+  @include tablet {
+    min-height: $tabletHeight;
+    background-image: url("../../assets/crew/background-crew-tablet.jpg");
+  }
+
+  .contentContainer {
+    width: $desktopWidth;
+    height: $desktopHeight;
+    position: relative;
+    transition: opacity 0.5s ease;
+
+    @include tablet {
+      width: $tabletWidth;
+      height: $tabletHeight;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
+
+    .title {
+      position: absolute;
+      top: 212px;
+      left: 166px;
+
+      h2 {
+        color: white;
+        font-size: $heading5Size;
+        font-weight: 100;
+        letter-spacing: $heading5Spacing;
+        text-transform: uppercase;
+        font-family: $condensedFont;
+
+        span {
+          color: grey;
+          font-weight: 600;
+          margin-right: 21px;
+        }
+      }
+
+      @include tablet {
+        position: absolute;
+        top: 13%;
+        left: 19.5%;
+        h2 {
+          font-size: 23px;
+          letter-spacing: 2px;
+          span {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+
+    .crewSelector {
+      position: absolute;
+      top: 790px;
+      left: 166px;
+      display: flex;
+      z-index: 3;
+
+      @include tablet {
+        position: absolute;
+        top: 43%;
+        left: 44%;
+      }
+
+      .indicator {
+        width: 17px;
+        height: 17px;
+        background-color: rgb(102, 102, 102);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin-right: 22px;
+
+        &.active {
+          background-color: lightgray;
+        }
+
+        &:hover {
+          background-color: white;
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .crewSlider {
+      width: 100vw * 5;
+      height: $desktopHeight;
+      display: flex;
+      z-index: 5;
+      transition: all 1s ease;
+
+      @include tablet {
+        height: $tabletHeight;
+      }
+
+      .crewSlide {
+        color: white;
+        width: $desktopWidth;
+        height: $desktopHeight;
+        margin-right: calc(100vw - #{$desktopWidth});
+        opacity: 0;
+        transition: all 1s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+          width: $tabletWidth;
+          height: $tabletHeight;
+          margin-right: calc((100vw - #{$tabletWidth}) / 1);
+          justify-content: flex-start;
+          flex-direction: column-reverse;
+        }
+
+        &.active {
+          opacity: 1;
+        }
+
+        .imgContainer {
+          position: relative;
+          bottom: -50px;
+          left: 572px;
+          width: 500px;
+          height: 800px;
+
+          img {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+          }
+        }
+
+        .infoContainer {
+          position: relative;
+          left: -560px;
+          top: 114px;
+          width: 490px;
+          height: 329px;
+
+          .role {
+            font-family: $regularHeadingFont;
+            text-transform: uppercase;
+            font-weight: 100;
+            font-size: $heading4Size;
+            margin-bottom: 15px;
+          }
+
+          .name {
+            text-transform: uppercase;
+            font-weight: 100;
+            font-family: $regularHeadingFont;
+            font-size: $heading3Size;
+            margin-bottom: 26px;
+          }
+
+          .bio {
+            font-family: $regularTextFont;
+            font-size: $bodyTextSize;
+            font-weight: 100;
+            padding-right: 30px;
+            line-height: 32px;
+          }
+        }
+
+        @include tablet {
+          align-items: center;
+          .imgContainer {
+            position: static;
+            height: 50%;
+            width: auto;
+            img {
+              position: static;
+              margin: 0px;
+              height: 100%;
+              width: auto;
+            }
+          }
+
+          .infoContainer {
+            position: static;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+            height: auto;
+            margin-bottom: 10%;
+
+            .role {
+              margin-bottom: 10px;
+              font-size: 24px;
+            }
+
+            .name {
+              font-size: 40px;
+              margin-bottom: 21px;
+            }
+            .bio {
+              text-align: center;
+              font-size: 15px;
+              line-height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,8 +3,8 @@ import './app.scss';
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./views/Home/Home";
 import Destinations from "./views/Destinations/Destinations";
-// import Crew from "./views/Crew";
-// import Technology from "./views/Technology";
+import Crew from "./views/Crew/Crew";
+import Technology from "./views/Technology/Technology";
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -26,8 +26,8 @@ const App = () => {
           handleScreenChange={handleScreenChange}
           active={currentPage === 0 ? true : false} />
         <Destinations active={currentPage === 1 ? true : false} />
-        {/* <Crew active={currentPage === 2 ? true : false} />
-        <Technology active={currentPage === 3 ? true : false} />  */}
+        <Crew active={currentPage === 2 ? true : false} />
+       <Technology active={currentPage === 3 ? true : false} /> 
       </div>
     </div>
   )
